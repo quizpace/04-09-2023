@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="Phone.js"></script>
+  </head>
+  <body>
+    <script>
+      const myPhone = new Phone(
+        "Apple",
+        "iPhone 13 mini",
+        "Blue",
+        256,
+        89,
+        true
+      );
+
+      document.write(`<p>Brand: ${myPhone.brand}</p>`);
+      document.write(`<p>Model: ${myPhone.model}</p>`);
+      document.write(`<p>Color: ${myPhone.color}</p>`);
+      document.write(`<p>Storage Capacity: ${myPhone.storageCapacity}GB</p>`);
+      document.write(`<p>Battery Life: ${myPhone.batteryLife} hours</p>`);
+      document.write(`<p>Powered On: ${myPhone.poweredOn ? "Yes" : "No"}</p>`);
+    </script>
+  </body>
+</html>

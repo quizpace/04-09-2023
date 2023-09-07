@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cars</title>
+    <script src="Car.js"></script>
+  </head>
+  <body>
+    <script>
+      const brand = prompt("Enter the car's brand:");
+      const model = prompt("Enter the car's model:");
+      const price = parseFloat(prompt("Enter the car's price:"));
+      const license = prompt("Enter the car's license plate:");
+      const year = parseInt(prompt("Enter the car's manufacturing year:"));
+      const color = prompt("Enter the car's color:");
+
+      const maintenanceYears = prompt(
+        "Enter maintenance years with spaces (1999 2002 2004 ...):"
+      );
+      const maintenanceYearArray = maintenanceYears
+        .split(" ") // Split by spaces
+        .map((year) => parseInt(year.trim()));
+
+      const myCar = new Car(
+        brand,
+        model,
+        price,
+        license,
+        year,
+        color,
+        maintenanceYearArray
+      );
+
+      console.log("myCar Object:", myCar);
+      console.log("Maintenance Year Array:", maintenanceYearArray);
+
+      document.write("<b>My Car:</b><br><br>");
+      document.write(`Brand: ${myCar.brand}<br><br>`);
+      document.write(`Model: ${myCar.model}<br><br>`);
+      document.write(`Price: $${myCar.price.toFixed(2)}<br><br>`);
+      document.write(`License Plate: ${myCar.license}<br><br>`);
+      document.write(`Manufacturing Year: ${myCar.year}<br><br>`);
+      document.write(`Color: ${myCar.color}<br><br>`);
+      document.write(
+        `Maintenance Years: ${myCar.maintenanceYears.join(", ")}<br>`
+      );
+    </script>
+  </body>
+</html>
